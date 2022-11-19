@@ -1,0 +1,9 @@
+.home {
+  background: url(../img/pattern_blue-1.jpg) no-repeat cover center fixed;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
