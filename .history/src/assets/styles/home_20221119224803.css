@@ -1,0 +1,14 @@
+.home {
+  background: url(../img/pattern_blue-1.jpg) no-repeat cover center fixed;
+  /* padding: 2rem; */
+  height: 100vh;
+  color:  #fff;
+}
+
+.home__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}

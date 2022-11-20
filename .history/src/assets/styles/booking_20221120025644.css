@@ -1,0 +1,11 @@
+.booking {
+  background: #f5f5f5;
+  padding: 5rem;
+}
+
+.booking__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}

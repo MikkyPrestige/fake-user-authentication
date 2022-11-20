@@ -1,0 +1,21 @@
+.booking {
+  background: #f5f5f5;
+  padding: 5rem 0;
+}
+
+.booking__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+
+.booking__content {
+  width: 50%;
+  height: 20rem;
+  background-image: url(../img/folded-clothes.jpeg);
+  background-repeat: no-repeat;
+  /* background-size: cover; */
+  background-position: center;
+  background-attachment: fixed;
+}

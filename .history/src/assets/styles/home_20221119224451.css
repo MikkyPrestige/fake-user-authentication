@@ -1,0 +1,7 @@
+.home {
+  background: url(../img/pattern_blue-1.jpg) no-repeat cover center fixed;
+  margin-top: 10rem;
+  padding: 2rem;
+  height: 100vh;
+  color:  #fff;
+}

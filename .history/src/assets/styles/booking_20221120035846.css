@@ -1,0 +1,100 @@
+.booking {
+  background: #f5f5f5;
+  padding: 5rem 0;
+  height: 100%;
+}
+
+.booking__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.booking__content {
+  width: 50%;
+  height: 45rem;
+  background-image: url(../img/folded-clothes.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  padding: 1rem;
+  margin: 2rem auto;
+  border: 1px solid #ffeb3b;
+  border-radius: 2rem;
+}
+
+.booking__title {
+  font-size: 2rem;
+  font-weight: 900;
+  color: #f5f5f5;
+  margin: 1rem;
+  text-transform: capitalize;
+}
+
+.booking__description {
+  font-size: 1.5rem;
+  font-style: italic;
+  font-weight: 700;
+  color: #ffeb3b;
+}
+
+.booking__form {
+  background: #fff;
+  padding: 1rem;
+  margin: 2rem auto;
+  border: 1px solid #ffeb3b;
+  border-radius: 1rem;
+  text-align: center;
+}
+
+.booking__form--group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1rem 0;
+}
+
+.booking__form--label {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #000;
+  margin-bottom: .3rem;
+}
+
+.booking__form--input {
+  width: 70%;
+  padding: .5rem;
+  border: 1px solid #ffeb3b;
+  border-radius: 1rem;
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  -ms-border-radius: 1rem;
+  -o-border-radius: 1rem;
+}
+
+.booking__form--input:focus {
+  outline: none;
+}
+
+.booking__form--button {
+  width: 50%;
+  padding: .5rem;
+  border: 1px solid #ffeb3b;
+  border-radius: 1rem;
+  background-color: #ffeb3b;
+  color: #000;
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.booking__form--button:hover {
+  background-color: #000;
+  color: #ffeb3b;
+}
+
+.booking__form--button:active {
+  background-color: #ffeb3b;
+  color: #000;
+}

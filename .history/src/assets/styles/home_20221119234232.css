@@ -1,0 +1,43 @@
+.home {
+  background: url(../img/pattern_blue-1.jpg) no-repeat cover center fixed;
+  height: 100vh;
+  color:  #fff;
+}
+
+.home__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  line-height: .2rem;
+  text-transform: capitalize;
+}
+
+.home__title {
+  font-size: 2rem;
+  font-weight: 900;
+}
+
+.home__description {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #FAF7F0;
+}
+
+.home__link {
+  text-decoration: none;
+  color: #FFEB3B;
+  font-size: 1.5rem;
+  font-weight: 600;
+  padding: 1rem;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  margin-top: 2rem;
+}
+
+.home__link:hover {
+  background-color: #FFEB3B;
+  color: #000;
+}
+
