@@ -1,4 +1,4 @@
-// BOOKING COMPONENT: This component is for the form to book a plan with the company in the app
+// BOOKING COMPONENT: This component is for the form to schedule an appointment with the company in the app
 
 import React from "react";
 import { useState } from "react";
@@ -10,10 +10,12 @@ const Booking = () => {
   const [form, setForm] = useState({
     fullName: "",
     email: "",
-    phone: "",
     businessName: "",
     businessAddress: "",
     businessPhone: "",
+    service: "",
+    serviceType: "",
+serviceFrequency: "",
     orderMessage: "",
   });
 
@@ -21,90 +23,40 @@ const Booking = () => {
   const [error, setError] = useState({});
   // Create a state for the success
   const [success, setSuccess] = useState(false);
-  // Create a state for reset
-  const [reset, setReset] = useState({
-    fullName: "",
-    email: "",
-    phone: "",
-    businessName: "",
-    businessAddress: "",
-    businessPhone: "",
-    orderMessage: "",
-  });
 
-  // Create a function to handle the form
+  // Create a function to handle the change
   const handleChange = (e) => {
-    setForm({
-      ...form,
-      [e.target.name]: e.target.value,
-    });
+    const { name, value } = e.target;
+    setForm({ ...form, [name]: value }); // A spread operator is used to copy the form object and then add the name and value to the form object and then set the form object to the new form object with the name and value added to it
   };
 
   // Create a function to handle the submit
   const handleSubmit = (e) => {
     e.preventDefault();
+    console.log(form);
     // Validate the form
-    if (validateForm()) {
-      // Send the form to the backend
-      console.log(form);
-      // Reset the form
-      setForm(reset);
-      // Show the success message
+    const validate = () => {
+      let error = {};
+      if (!form.fullName) {
+        error.fullName = "Full name is required";
+      }
+      if (!form.email) {
+        error.email = "Email is required";
+      }
+      if (!form.phone) {
+        error.phone = "Phone Number is required";
+      }
+      if (!form.orderMessage) {
+        error.orderMessage = "Order is required";
+      }
+      return error;
+    };
+    // Set the error
+    setError(validate());
+    // Check if there is no error
+    if (Object.keys(validate()).length === 0) {
       setSuccess(true);
-      // Hide the success message after 15 seconds
-      setTimeout(() => {
-        setSuccess(false);
-      }, 15000);
     }
-  };
-
-  // Create a function to validate the form
-  const validateForm = () => {
-    // Create a variable to store the errors
-    let errors = {};
-    // Create a variable to store the form is valid
-    let formIsValid = true;
-
-    // Validate the full name
-    if (!form.fullName.trim()) {
-      errors.fullName = "Please enter your full name";
-      formIsValid = false;
-    }
-
-    // Validate the email
-    if (!form.email.trim()) {
-      errors.email = "Please enter your email";
-      formIsValid = false;
-    } else {
-      const regex = /\S+@\S+\.\S+/;
-      if (!regex.test(form.email.trim())) {
-        errors.email = "Please enter a valid email";
-        formIsValid = false;
-      }
-    }
-
-    // Validate the phone
-    if (!form.phone.trim()) {
-      errors.phone = "Please enter your phone number";
-      formIsValid = false;
-    } else {
-      const regex = /^[0-9\b]+$/;
-      if (!regex.test(form.phone.trim())) {
-        errors.phone = "Please enter a valid phone number";
-        formIsValid = false;
-      }
-    }
-
-    // Validate the order message
-    if (!form.orderMessage.trim()) {
-      errors.orderMessage = "Please enter your order message";
-      formIsValid = false;
-    }
-
-    // Set the errors
-    setError(errors);
-    // Return the form is valid
-    return formIsValid;
   };
 
   return (
@@ -147,11 +99,10 @@ const Booking = () => {
               type="text"
               name="fullName"
               id="fullName"
-              value={form.fullName}
               placeholder="Enter your Full Name"
               className="booking__form--input"
               onChange={handleChange}
-              // required
+              required
             />
             {error.fullName && (
               <p className="booking__form--error">{error.fullName}</p>
@@ -165,11 +116,10 @@ const Booking = () => {
               type="email"
               name="email"
               id="email"
-              value={form.email}
               placeholder="Enter your Email"
               className="booking__form--input"
               onChange={handleChange}
-              // required
+              required
             />
             {error.email && (
               <p className="booking__form--error">{error.email}</p>
@@ -183,11 +133,10 @@ const Booking = () => {
               type="tel"
               name="phone"
               id="phone"
-              value={form.phone}
               placeholder="Enter your Phone Number"
               className="booking__form--input"
               onChange={handleChange}
-              // required
+              required
             />
             {error.phone && (
               <p className="booking__form--error">{error.phone}</p>
@@ -201,7 +150,6 @@ const Booking = () => {
               type="text"
               name="businessName"
               id="businessName"
-              value={form.businessName}
               placeholder="Enter your Business Name"
               className="booking__form--input"
               onChange={handleChange}
@@ -215,7 +163,6 @@ const Booking = () => {
               type="text"
               name="businessAddress"
               id="businessAddress"
-              value={form.businessAddress}
               placeholder="Enter your Business Address"
               className="booking__form--input"
               onChange={handleChange}
@@ -229,39 +176,90 @@ const Booking = () => {
               type="text"
               name="businessPhone"
               id="businessPhone"
-              value={form.businessPhone}
               placeholder="Enter your Business Phone"
               className="booking__form--input"
               onChange={handleChange}
             />
           </div>
+
           <div className="booking__form--group">
-            <label htmlFor="orderMessage" className="booking__form--label">
+            <label htmlFor="service" className="booking__form--label">
+              Service
+            </label>
+            <select
+              name="service"
+              id="service"
+              className="booking__form--input"
+              value={form.service}
+              onChange={handleChange}
+            >
+              <option value="wash and fold">select</option>
+              <option value="Wash and Fold">Wash and Fold</option>
+              <option value="Dry Cleaning">Dry Cleaning</option>
+              <option value="Pickup and Delivery">Pickup and Delivery</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+          <div className="booking__form--group">
+            <label htmlFor="service" className="booking__form--label">
+              Service Type
+            </label>
+            <select
+              name="serviceType"
+              id="serviceType"
+              className="booking__form--input"
+              value={form.serviceType}
+              onChange={handleChange}
+            >
+              <option value="select">select</option>
+              <option value="Regular">Regular</option>
+              <option value="Express">Express</option>
+            </select>
+          </div>
+          <div className="booking__form--group">
+            <label htmlFor="service" className="booking__form--label">
+              Service Frequency
+            </label>
+            <select
+              name="serviceFrequency"
+              id="serviceFrequency"
+              className="booking__form--input"
+              value={form.serviceFrequency}
+              onChange={handleChange}
+            >
+              <option value="select">select</option>
+              <option value="One Time">One Time</option>
+              <option value="Weekly">Weekly</option>
+              <option value="Bi-Weekly">Bi-Weekly</option>
+              <option value="Monthly">Monthly</option>
+            </select>
+          </div>
+          <div className="booking__form--group">
+            <label htmlFor="order" className="booking__form--label">
               Tell us about your laundry needs *
             </label>
             <textarea
-              name="orderMessage"
-              id="orderMessage"
+              name="order"
+              id="order"
               cols="30"
               rows="5"
-              value={form.orderMessage}
               placeholder="Enter your laundry needs"
               className="booking__form--input"
               onChange={handleChange}
-              // required
+              required
             ></textarea>
-            {error.orderMessage && (
-              <p className="booking__form--error">{error.orderMessage}</p>
+            {error.order && (
+              <p className="booking__form--error">{error.order}</p>
             )}
           </div>
           <button className="booking__form--button">Submit</button>
-          {success && (
-            <p className="booking__form--success">
-              Your order is received and been fast tracked.
-              <span>Thank you for choosing us.</span>
-            </p>
-          )}
         </form>
+        {success && (
+          <p className="booking__form--success">
+            Your order is received and been fast tracked.
+            <span>Thank you for choosing us.</span>
+          </p>
+        )}
       </div>
       <Link to="/" className="booking__link">
         Back

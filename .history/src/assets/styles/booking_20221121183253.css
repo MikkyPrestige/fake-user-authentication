@@ -13,7 +13,7 @@
 
 .booking__content {
   width: 50%;
-  height: 41rem;
+  height: 46rem;
   background-image: url(../img/folded-clothes.jpeg);
   background-repeat: no-repeat;
   background-size: cover;
@@ -126,14 +126,10 @@
   color: #000;
 }
 
-.booking__form--error {
-  color: red;
-  margin-top: .1rem;
-}
-
 .booking__form--success {
   font-size: 1.2rem;
-  font-weight: 900;
+  font-weight: 600;
+  color: #000;
   margin: 1rem 0;
 }
 

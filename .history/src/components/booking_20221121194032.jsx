@@ -10,7 +10,6 @@ const Booking = () => {
   const [form, setForm] = useState({
     fullName: "",
     email: "",
-    phone: "",
     businessName: "",
     businessAddress: "",
     businessPhone: "",
@@ -25,7 +24,6 @@ const Booking = () => {
   const [reset, setReset] = useState({
     fullName: "",
     email: "",
-    phone: "",
     businessName: "",
     businessAddress: "",
     businessPhone: "",
@@ -45,16 +43,16 @@ const Booking = () => {
     e.preventDefault();
     // Validate the form
     if (validateForm()) {
-      // Send the form to the backend
-      console.log(form);
+      // Send the form to the server
+      console.log("form");
       // Reset the form
       setForm(reset);
       // Show the success message
       setSuccess(true);
-      // Hide the success message after 15 seconds
+      // Hide the success message after 5 seconds
       setTimeout(() => {
         setSuccess(false);
-      }, 15000);
+      }, 5000);
     }
   };
 
@@ -84,13 +82,13 @@ const Booking = () => {
     }
 
     // Validate the phone
-    if (!form.phone.trim()) {
-      errors.phone = "Please enter your phone number";
+    if (!form.businessPhone.trim()) {
+      errors.businessPhone = "Please enter your phone number";
       formIsValid = false;
     } else {
       const regex = /^[0-9\b]+$/;
-      if (!regex.test(form.phone.trim())) {
-        errors.phone = "Please enter a valid phone number";
+      if (!regex.test(form.businessPhone.trim())) {
+        errors.businessPhone = "Please enter a valid phone number";
         formIsValid = false;
       }
     }
@@ -256,11 +254,11 @@ const Booking = () => {
           </div>
           <button className="booking__form--button">Submit</button>
           {success && (
-            <p className="booking__form--success">
-              Your order is received and been fast tracked.
-              <span>Thank you for choosing us.</span>
-            </p>
-          )}
+          <p className="booking__form--success">
+            Your order is received and been fast tracked.
+            <span>Thank you for choosing us.</span>
+          </p>
+        )}
         </form>
       </div>
       <Link to="/" className="booking__link">

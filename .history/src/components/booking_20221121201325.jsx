@@ -256,11 +256,11 @@ const Booking = () => {
           </div>
           <button className="booking__form--button">Submit</button>
           {success && (
-            <p className="booking__form--success">
-              Your order is received and been fast tracked.
-              <span>Thank you for choosing us.</span>
-            </p>
-          )}
+          <p className="booking__form--success">
+            Your order is received and been fast tracked.
+            <span>Thank you for choosing us.</span>
+          </p>
+        )}
         </form>
       </div>
       <Link to="/" className="booking__link">
