@@ -23,15 +23,16 @@ const AuthProvider = ({ children }) => {
     setUser(null);
   };
 
-  // Create sign up function
-  const signUp = (user) => {
+  // Register the user
+  const register = (user) => {
     // Set the user
     setUser(user);
   };
 
+
   // Return the provider
   return (
-    <AuthContext.Provider value={{ user, login, logout, signUp }}>
+    <AuthContext.Provider value={{ user, login, logout, register }}>
       {children}
     </AuthContext.Provider>
   );

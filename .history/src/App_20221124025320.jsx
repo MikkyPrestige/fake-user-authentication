@@ -19,7 +19,6 @@ function App() {
           </Route>
           <Route path="/user" element={<RequireAuth><User /></RequireAuth>} />
           <Route path="/logout" element={<Logout />} />
-          <Route path="/signUp" element={<SignUp />} />
           <Route path="/booking" element={<Booking />} />
           <Route path="*" element={<Error />} />
         </Routes>

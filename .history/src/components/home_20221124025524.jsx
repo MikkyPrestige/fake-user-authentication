@@ -11,7 +11,7 @@ const Home = () => {
             <div className="home__content">
                 <h1 className="home__title">Connect to your Dry Cleaner</h1>
                 <p className="home__description">Wash & fold, drop off and pickup & delivery laundry service in Asaba, Delta State.</p>
-                <Link to="/signUp" className="home__link">Get started</Link>
+                <Link to="../profile/signUp.jsx" className="home__link">Get started</Link>
             </div>
         </div>
     )

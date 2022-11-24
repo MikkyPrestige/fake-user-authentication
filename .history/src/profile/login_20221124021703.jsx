@@ -35,7 +35,7 @@ const Login = () => {
   const handleLogin = () => {
     if (validate()) {
       auth.login(user, password);
-      navigate(redirect, { replace: true }); //  Redirect the user to the home page after they login successfully.
+      navigate(redirect, {replace: true}); //  Redirect the user to the home page after they login successfully.
     }
   };
 

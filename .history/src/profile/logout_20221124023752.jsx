@@ -1,7 +1,7 @@
 // LOGOUT COMPONENT:
 // This component is for the logout page in the app
 
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "./context/auth";
 

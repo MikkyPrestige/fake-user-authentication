@@ -13,7 +13,7 @@ const Login = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const redirect = location.state?.path || "/user"; // If the user was redirected to the login page, redirect them back to the page they were on after they login successfully. Otherwise, redirect them to the home page.
+  const redirect = location.state?.path || "/"; // If the user was redirected to the login page, redirect them back to the page they were on after they login successfully. Otherwise, redirect them to the home page.
 
   // Validate the form
   const validate = () => {
@@ -35,7 +35,7 @@ const Login = () => {
   const handleLogin = () => {
     if (validate()) {
       auth.login(user, password);
-      navigate(redirect, { replace: true }); //  Redirect the user to the home page after they login successfully.
+      navigate(redirect, {replace: true}); //  Redirect the user to the home page after they login successfully.
     }
   };
 
