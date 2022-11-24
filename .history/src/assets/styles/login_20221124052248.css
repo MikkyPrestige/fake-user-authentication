@@ -1,0 +1,11 @@
+.login {
+    background-color: #ccc;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px #ccc;
+    margin: 0 auto;
+    padding: 2rem;
+    width: 100%;
+    max-width: 900px;
+    height: 100vh;
+}
