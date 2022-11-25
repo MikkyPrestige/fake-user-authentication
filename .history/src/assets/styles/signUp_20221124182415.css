@@ -1,0 +1,26 @@
+.signUp {
+    background-color: #ccc;
+    padding: 2rem;
+    margin-top: 2rem;
+    height: 100vh;
+}
+
+.signUp__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.signUp__title {
+    font-size: 2rem;
+}
+
+.signUp__form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}

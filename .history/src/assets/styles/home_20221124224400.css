@@ -1,0 +1,111 @@
+.home {
+  background-image: url(../img/pattern_blue-1.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  height: 100vh;
+  color: #fff;
+}
+
+.home__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* height: 100%; */
+  text-align: center;
+  padding: 0 2rem;
+}
+
+.home__title {
+  font-size: 2rem;
+  font-weight: 900;
+}
+
+.home__description {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #FAF7F0;
+}
+
+.home__paragraph {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.home__paragraph a {
+  color: #ffeb3b;
+  text-decoration: none;
+}
+
+.home__paragraph a:hover {
+  text-decoration: underline;
+}
+
+.home__link {
+  text-decoration: none;
+  color: #FFEB3B;
+  font-size: 1.5rem;
+  font-weight: 600;
+  padding: .5rem;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  margin-top: 2rem;
+  cursor: pointer;
+  animation: pulse 5s linear infinite both;
+  -webkit-animation: pulse 5s linear infinite both;
+}
+
+.home__link:hover {
+  background-color: #FFEB3B;
+  color: #000;
+}
+
+@media screen and (max-width: 600px) {
+  .home__content {
+    padding: 1rem
+  }
+  .home__title {
+    font-size: 1.5rem;
+  }
+
+  .home__description {
+    font-size: 1.2rem;
+  }
+
+  .home__link {
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (max-width: 410px) {
+  .home__title {
+    font-size: 1.2rem;
+  }
+
+  .home__description {
+    font-size: 1rem;
+  }
+
+  .home__link {
+    font-size: 1rem;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    background-color: blue;
+  }
+
+  50% {
+    transform: scale(1.1);
+    background-color: red;
+  }
+
+  100% {
+    transform: scale(1);
+    background-color: blue;
+  }
+}

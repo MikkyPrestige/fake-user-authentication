@@ -1,0 +1,46 @@
+.user {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: .5rem;
+  height: 100vh;
+  background-color: #ccc;
+}
+
+.user__title {
+  font-size: 2rem;
+  font-style: italic;
+}
+
+.user__text {
+  font-size: 1.2rem;
+}
+
+.user__links {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: .5rem;
+}
+
+.user__link {
+  text-decoration: none;
+  color: #84b1ed;
+  font-size: 1.2rem;
+}
+
+.user__link:hover {
+  color: #FFFFF3;
+}
+
+.user__back--link {
+  text-decoration: none;
+  color: #84b1ed;
+  font-size: 1.2rem;
+}
+
+.user__back--link:hover {
+  color: #FFFFF3;
+}
